@@ -1,3 +1,7 @@
+"""
+This script is written for the convenience of viewing SoundActor GEN 2.0 firmware data on the portal http://www.mqbtools.nl/soundaktor/
+"""
+
 import sys
 import os
 import re
