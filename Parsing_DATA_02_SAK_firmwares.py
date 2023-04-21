@@ -1,7 +1,3 @@
-"""
-This script is written for the convenience of viewing SoundActor GEN 2.0 firmware data on the portal http://www.mqbtools.nl/soundaktor/
-"""
-
 import sys
 import os
 import re
@@ -12,7 +8,7 @@ if sys.version_info[0] < 3:
     print("Install Python 3 or newer!")
     sys.exit(1)
     
-def creation_derictory_extract(filename):
+def creation_directory_extract(filename):
     path = f"SAK_DATA_02"
     if not os.path.isdir(path):
         os.makedirs(path)
@@ -21,7 +17,7 @@ def creation_derictory_extract(filename):
 def extract_data_02(filename, num_file):
     try:
         result_data_02 = search_data_02(filename)
-        creation_derictory_extract(filename)
+        creation_directory_extract(filename)
         output_file_name = f"SAK_DATA_02/{filename.split('.')[0]}_DATA_02.bin"
         with open(output_file_name, 'wb') as out_file:
             out_file.write(result_data_02)
@@ -32,12 +28,12 @@ def extract_data_02(filename, num_file):
         print("Finished writing output files.")
 
 def write_meta_info_data_02_file(filename):
-    with open("SAK_DATA_02/meta_extract_data_02_firmwares_SAK.txt", "a+") as firmwares_info:
-        print(filename, file=firmwares_info)
+    with open("SAK_DATA_02/meta_extract_data_02_firmwares_SAK.txt", "a+") as firmware_names:
+        print(filename, file=firmware_names)
         
-def search_work_files(derictory, num_file=1, flag=False):
-    # Search files in current derictory
-    for current_dir, dirs, files in os.walk(derictory): 
+def search_work_files(directory, num_file=1, flag=False):
+    # Search files in current directory
+    for current_dir, dirs, files in os.walk(directory): 
         for file in files:
             if file[-4:] == ".odx":
                 print(f"\nFile found {file:*^50}")
@@ -62,19 +58,19 @@ def search_data_02(file, data_02=None):
         input("Press Enter to exit...")
         sys.exit(0)
    
-def parsing_odx_files(derictory):
-    search_work_files(derictory)
+def parsing_odx_files(directory):
+    search_work_files(directory)
     print("\nDone's.")
     input("Press Enter to exit...")
 
 if __name__ == "__main__":
     # Current working directory
-    derictory = os.getcwd()
+    directory = os.getcwd()
     meta_file = "SAK_DATA_02/meta_extract_data_02_firmwares_SAK.txt"
     if os.path.isfile(meta_file):
         os.remove(meta_file)
-    print(f"Search in current category: {derictory}\n")
+    print(f"Search in current category: {directory}\n")
     time.sleep(1)
-    parsing_odx_files(derictory)
+    parsing_odx_files(directory)
 
 
