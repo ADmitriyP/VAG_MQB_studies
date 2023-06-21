@@ -9,7 +9,7 @@ if sys.version_info[0] < 3:
     sys.exit(1)
     
 def creation_directory_extract(filename):
-    path = f"SAK_DATA_02"
+    path = f"GEN_2.0_SAK_DATA_02"
     if not os.path.isdir(path):
         os.makedirs(path)
     print(f"Created directory extract: {path}")
@@ -18,17 +18,17 @@ def extract_data_02(filename, num_file):
     try:
         result_data_02 = search_data_02(filename)
         creation_directory_extract(filename)
-        output_file_name = f"SAK_DATA_02/{filename.split('.')[0]}_DATA_02.bin"
+        output_file_name = f"GEN_2.0_SAK_DATA_02/{'_'.join(filename.rsplit('.')[:-1])}_DATA_02.bin"
         with open(output_file_name, 'wb') as out_file:
             out_file.write(result_data_02)
             write_meta_info_data_02_file(f"{num_file}) {output_file_name}")
-    except Exception:
-        sys.exit("\nError parsing files.")
+    except Exception as e:
+        sys.exit(f"\nError parsing files.\n{e}")
     else:
         print("Finished writing output files.")
 
 def write_meta_info_data_02_file(filename):
-    with open("SAK_DATA_02/meta_extract_data_02_firmwares_SAK.txt", "a+") as firmware_names:
+    with open("GEN_2.0_SAK_DATA_02/meta_extract_data_02_firmwares_SAK.txt", "a+") as firmware_names:
         print(filename, file=firmware_names)
         
 def search_work_files(directory, num_file=1, flag=False):
@@ -66,11 +66,9 @@ def parsing_odx_files(directory):
 if __name__ == "__main__":
     # Current working directory
     directory = os.getcwd()
-    meta_file = "SAK_DATA_02/meta_extract_data_02_firmwares_SAK.txt"
+    meta_file = "GEN_2.0_SAK_DATA_02/meta_extract_data_02_firmwares_SAK.txt"
     if os.path.isfile(meta_file):
         os.remove(meta_file)
     print(f"Search in current category: {directory}\n")
     time.sleep(1)
     parsing_odx_files(directory)
-
-
