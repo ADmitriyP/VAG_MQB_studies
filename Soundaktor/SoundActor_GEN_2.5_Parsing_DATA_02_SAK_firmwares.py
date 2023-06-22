@@ -9,7 +9,7 @@ if sys.version_info[0] < 3:
     sys.exit(1)
     
 def creation_directory_extract(filename):
-    path = f"SAK_DATA_02"
+    path = f"GEN_2.5_SAK_DATA_02"
     if not os.path.isdir(path):
         os.makedirs(path)
     print(f"Created directory extract: {path}")
@@ -18,7 +18,7 @@ def extract_data_02(filename, num_file):
     try:
         result_data_02 = search_data_02(filename)
         creation_directory_extract(filename)
-        output_file_name = f"SAK_DATA_02/{filename.split('.')[0]}_DATA_02.bin"
+        output_file_name = f"GEN_2.5_SAK_DATA_02/{'_'.join(filename.rsplit('.')[:-1])}_DATA_02.bin"
         with open(output_file_name, 'wb') as out_file:
             out_file.write(result_data_02)
             write_meta_info_data_02_file(f"{num_file}) {output_file_name}")
@@ -28,7 +28,7 @@ def extract_data_02(filename, num_file):
         print("Finished writing output files.")
 
 def write_meta_info_data_02_file(filename):
-    with open("SAK_DATA_02/meta_extract_data_02_firmwares_SAK.txt", "a+") as firmware_names:
+    with open("GEN_2.5_SAK_DATA_02/meta_extract_data_02_firmwares_SAK.txt", "a+") as firmware_names:
         print(filename, file=firmware_names)
         
 def search_work_files(directory, num_file=1, flag=False):
@@ -48,7 +48,7 @@ def search_work_files(directory, num_file=1, flag=False):
 def search_data_02(file, data_02=None):
     with open(f'{file}', 'r', encoding='utf-8') as file:
         for line in file:
-            response = re.findall(r'<DATA>([A-Za-z0-9]{196610})</DATA>', f'{line}')
+            response = re.findall(r'<DATA>([A-Za-z0-9]{196608})</DATA>', f'{line}')
             if response:
                 data_02 = bytearray.fromhex(''.join(response))
                 break
@@ -66,7 +66,7 @@ def parsing_odx_files(directory):
 if __name__ == "__main__":
     # Current working directory
     directory = os.getcwd()
-    meta_file = "SAK_DATA_02/meta_extract_data_02_firmwares_SAK.txt"
+    meta_file = "GEN_2.5_SAK_DATA_02/meta_extract_data_02_firmwares_SAK.txt"
     if os.path.isfile(meta_file):
         os.remove(meta_file)
     print(f"Search in current category: {directory}\n")
