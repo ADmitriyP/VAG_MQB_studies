@@ -1,1 +1,2 @@
-Parameters that eliminate errors associated with an incorrect data block when diagnosing block 5F. Relevant after installing multimedia in European cars.
+Parameters that eliminate errors associated with an incorrect data block when diagnosing block 5F.
+Relevant after installing multimedia in European cars.
