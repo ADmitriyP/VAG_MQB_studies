@@ -1,2 +1,3 @@
-This script is written for the convenience of viewing SoundActor GEN 2.0 firmware data on the portal http://www.mqbtools.nl/soundaktor/.
-This Python script implements a recursive traversal of files in the current directory with SoundActor firmware files (SAK) for the subsequent extraction of the DATA_02 data block, converting the data from HEX -> ASCII and saving the file to a separate DATA_02 directory.
+This script is designed for the convenience of viewing SoundActor GEN 2.0 firmware data on the portal http://www.mqbtools.nl/soundaktor/.
+
+This Python script performs a recursive traversal of files in the current directory that contain SoundActor firmware files (SAK). It subsequently extracts the DATA_02 data block, converts the data from HEX to ASCII, and saves the resulting file in a separate DATA_02 directory.
