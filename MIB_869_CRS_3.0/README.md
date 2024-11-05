@@ -2,5 +2,5 @@
 <p align="center">
     <img src="https://github.com/ADmitriyP/VAG_MQB_studies/blob/main/MIB_869_CRS_3.0/VIEW.jpg" alt="logo" />
 </p>
----
-<p align="right">This research is based on personal experience and has no commercial basis.</p>.
+<hr style="border: 1px solid #000; margin: 20px 0;">
+<p>This research is based on personal experience and has no commercial basis.</p>.
