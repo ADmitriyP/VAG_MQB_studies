@@ -3,4 +3,4 @@
     <img src="https://github.com/ADmitriyP/VAG_MQB_studies/blob/main/MIB_869_CRS_3.0/VIEW.jpg" alt="logo" />
 </p>
 <hr style="border: 1px solid #000; margin: 20px 0;">
-<p><i>This research is based on personal experience and has no commercial basis. I do not intend to violate any rights in any way.</i></p>.
+<p><i>This research is based on personal experience and has no commercial basis. I do not intend to violate any rights in any way.</i></p>
