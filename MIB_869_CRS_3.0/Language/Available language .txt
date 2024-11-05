@@ -1,2 +1,0 @@
-Available CHINA, English. 
-Language files in XML format.
