@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/ADmitriyP/VAG_MQB_studies/blob/main/Soundaktor/VIEW.jpg" alt="logo" />
+    <img src="https://github.com/ADmitriyP/VAG_MQB_studies/blob/main/Soundaktor/VIEW.jpg" alt="logo" width="300" height="200">/>
 </p>
 This script is designed for the convenience of viewing SoundActor GEN 2.0 firmware data on the portal http://www.mqbtools.nl/soundaktor/.
 
